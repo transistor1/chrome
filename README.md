@@ -6,7 +6,7 @@ Tested on Ubuntu Trusty, docker version 1.4.1.
 
 ### Rationale:
 
-Most of the dockerized Chromes I've found use some sort of X forwarding and/or VNC server in them.  I wanted something that felt a little more "native'.
+Most of the dockerized Chromes I've found use some sort of X forwarding and/or VNC server in them.  I wanted something that felt a little more "native".
 
 ### Usage:
     sudo docker build -t chrome .
