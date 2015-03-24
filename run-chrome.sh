@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/sh
 
 SUDO="sudo -E -u $CHROMIUMUSER_USERNAME"
 
