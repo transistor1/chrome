@@ -24,6 +24,12 @@ RUN \
 # Add the run-chrome script
 ADD run-chrome.sh /
 
+# Add the start script so that user doesn't need to download separately.
+ADD start.sh /
+
+# Add script to pull start.sh
+ADD config /bin/config
+
 # Define default command.
 CMD ["/run-chrome.sh"]
 
