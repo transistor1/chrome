@@ -6,7 +6,9 @@ Tested on Ubuntu Trusty, docker version 1.4.1.
 
 ### Rationale:
 
-Most of the dockerized Chromes I've found use some sort of X forwarding and/or VNC server in them.  I wanted something that felt a little more "native".
+Most of the dockerized Chromes I've found use some sort of ssh X forwarding and/or VNC server in them.  I wanted something that was a little more "native".
+
+Newer versions of Docker support pass-through device nodes with the `--device` option, which is how we pass sound from the container to the host.  X is shared through UNIX sockets by sharing the /tmp/.X11-unix directory as a volume.  This may not be the most secure thing in the world, but it should certainly be more secure than running google-chrome directly in Ubuntu.
 
 ### Usage:
 
