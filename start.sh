@@ -10,12 +10,12 @@ if [ "$1" == "sudo" ]; then
 	FLAGS=-t
 fi
 
-xhost +local:
-
 if [ "$(which gksudo)" == "" ]; then
 	echo gksudo is required. Please install before running.
 	exit 0
 fi
+
+xhost +local:
 
 SNDDEVS=$(find /dev/snd -type c)
 SNDDEVS+=" $(find /dev/dri -type c)"
@@ -33,7 +33,7 @@ $SUDO \
 	-e CHROMIUMUSER_USERNAME=$USER \
 	-e CHROMIUMUSER_UID=$USER_UID \
 	-e CHROMIUMUSER_GID=$USER_GID \
-	chrome $@
+	transistor1/chrome $@
 
 
 
