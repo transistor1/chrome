@@ -2,6 +2,21 @@
 
 SUDO="sudo -E -u $CHROMIUMUSER_USERNAME"
 
+if [ "$CHROMIUMUSER_USERNAME" == "chromiumuser" ]; then
+	echo To run Chrome, please run the following commands:
+	echo
+	echo "sudo docker run transistor1/chrome config > start.sh"
+	echo sudo chmod +x start.sh
+	echo ./start.sh
+	echo
+	exit 0
+fi
+
+if [ "$CHROMIUMUSER_USERNAME" == "root" ]; then
+	echo "Please run as a standard user."
+	exit 0
+fi
+
 groupadd --gid $CHROMIUMUSER_GID $CHROMIUMUSER_USERNAME
 
 useradd -m $CHROMIUMUSER_USERNAME --uid $CHROMIUMUSER_UID --gid $CHROMIUMUSER_GID && \
