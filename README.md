@@ -1,4 +1,4 @@
-## Dockerized google-chrome with sound =
+## Dockerized google-chrome with sound
 
 This is a dockerized version of Google Chrome, with sound.  Tested on Ubuntu Trusty.
 
