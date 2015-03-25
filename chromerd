@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Via https://github.com/siomiz/chrome/blob/master/Dockerfile
+apt-get update 1>&2
+apt-get install -y xvfb gksu xbase-clients python python-psutil 1>&2
+wget -O /crd.deb https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 1>&2
+dpkg -i /crd.deb 1>&2
+
+mv /run-chrome.sh /run-chrome2.sh 1>&2
+cat > /run-chrome.sh <<EOF
+/usr/bin/Xvfb :1 -screen 0 1024x768x24 &
+/run-chrome2.sh
+EOF
+
+chmod +x /run-chrome.sh 1>&2
+
+echo #Now run the following and restart
+echo "docker commit $HOSTNAME transistor1/chrome && docker rm $HOSTNAME"
+

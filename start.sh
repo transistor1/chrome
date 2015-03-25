@@ -10,6 +10,12 @@ if [ "$1" == "sudo" ]; then
 	FLAGS=-t
 fi
 
+if [ "$1" != "--norm" ]; then
+	FLAGS+=--rm
+else
+	shift
+fi
+
 if [ "$(which gksudo)" == "" ]; then
 	echo gksudo is required. Please install the gksu package before running.
 	echo On Ubuntu, use:
@@ -35,7 +41,7 @@ SNDFLAGS=$(j=""; for i in $SNDDEVS; do j+="--device=\"$i:$i\" "; done; echo $j)
 #	grants LXC access to /dev/snd and /dev/dri
 
 $SUDO \
-	docker run $FLAGS -i --rm \
+	docker run $FLAGS -i \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v $HOME/google-chrome:/home/$USER \
 	-v $HOME/.config/pulse:/home/$USER/.config/pulse \

@@ -30,6 +30,9 @@ ADD start.sh /
 # Add script to pull start.sh
 ADD config /bin/config
 
+# Add optional chromerd script:
+ADD chromerd /bin/chromerd
+
 # Define default command.
 CMD ["/run-chrome.sh"]
 
