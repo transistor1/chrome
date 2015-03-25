@@ -4,6 +4,12 @@ SUDO="gksudo --"
 USER_UID=$(id -u)
 USER_GID=$(id -g)
 USER=$(whoami)
+CHROMEHOME=~/google-chrome
+
+if [ ! -d "$CHROMEHOME" ]; then
+	mkdir -p "$CHROMEHOME/.config/pulse"
+	chmod -R ugo+s "$CHROMEHOME"
+fi
 
 if [ "$1" == "sudo" ]; then
 	SUDO=sudo
@@ -37,7 +43,7 @@ SNDFLAGS=$(j=""; for i in $SNDDEVS; do j+="--device=\"$i:$i\" "; done; echo $j)
 $SUDO \
 	docker run $FLAGS -i --rm \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
-	-v $HOME/google-chrome:/home/$USER \
+	-v $CHROMEHOME:/home/$USER \
 	-v $HOME/.config/pulse:/home/$USER/.config/pulse \
 	$SNDFLAGS \
 	--lxc-conf='lxc.cgroup.devices.allow = c 116:* rwm' \
