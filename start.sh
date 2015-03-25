@@ -11,7 +11,9 @@ if [ "$1" == "sudo" ]; then
 fi
 
 if [ "$(which gksudo)" == "" ]; then
-	echo gksudo is required. Please install before running.
+	echo gksudo is required. Please install the gksu package before running.
+	echo On Ubuntu, use:
+	echo sudo apt-get install gksu
 	exit 0
 fi
 
