@@ -1,4 +1,4 @@
-## Dockerized google-chrome with sound
+## Dockerized google-chrome with sound and WebGL
 
 This is a dockerized version of Google Chrome, with sound and WebGL.
 
