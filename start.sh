@@ -6,7 +6,7 @@ USER_GID=$(id -g)
 USER=$(whoami)
 
 if [ "$1" == "sudo" ]; then
-	SUDO=sudo 
+	SUDO=sudo
 	FLAGS=-t
 fi
 
