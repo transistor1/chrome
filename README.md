@@ -21,6 +21,8 @@ Make sure you are a normal, non-privileged user with sudo access.  Then run the 
 
 You will then be prompted for your sudo password to run the Docker container.  You will get some warnings on startup, but you can safely close them.
 
+Once you have created the start.sh file, the next time you wish to run Chrome, you would just need to run `./start.sh`.
+
 I use a symlink in my $PATH to the start.sh so I can start it more easily.
 
 
