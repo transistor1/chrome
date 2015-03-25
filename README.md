@@ -1,14 +1,16 @@
 ## Dockerized google-chrome with sound
 
-This is a dockerized version of Google Chrome, with sound.
+This is a dockerized version of Google Chrome, with sound and WebGL.
 
-Tested on Ubuntu Trusty, docker version 1.4.1.
+Note: Only tested on a Ubuntu Trusty host, with docker version 1.4.1.  On a different host OS, it is possible that you might have issues with shared devices in /dev, or with the required packages.
 
-### Rationale:
+### Host requirements:
 
-Most of the dockerized Chromes I've found use some sort of ssh X forwarding and/or VNC server in them.  I wanted something that was a little more "native".
+Your host requires the `gksu` package, to graphically authenticate you in order to run the Docker container.
 
-Newer versions of Docker support pass-through device nodes with the `--device` option, which is how we pass sound from the container to the host.  X is shared through UNIX sockets by sharing the /tmp/.X11-unix directory as a volume.  This may not be the most secure thing in the world, but it should certainly be more secure than running google-chrome directly in Ubuntu.
+On Ubuntu, this package is installed by:
+
+    sudo apt-get update && sudo apt-get install gksu
 
 ### Usage:
 
@@ -25,5 +27,10 @@ Once you have created the start.sh file, the next time you wish to run Chrome, y
 
 I use a symlink in my $PATH to the start.sh so I can start it more easily.
 
+### Rationale:
+
+Most of the dockerized Chromes I've found use some sort of ssh X forwarding and/or VNC server in them.  I wanted something that was a little more "native".
+
+Newer versions of Docker support pass-through device nodes with the `--device` option, which is how we pass sound from the container to the host.  X is shared through UNIX sockets by sharing the /tmp/.X11-unix directory as a volume.  This may not be the most secure thing in the world, but it should certainly be more secure than running google-chrome directly in Ubuntu.
 
     
