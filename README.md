@@ -4,6 +4,8 @@ This is a dockerized version of Google Chrome, with sound and WebGL.
 
 Note: Only tested on a Ubuntu Trusty host, with docker version 1.4.1.  On a different host OS, it is possible that you might have issues with shared devices in /dev, or with the required packages.
 
+Comments and contributions are welcome!
+
 ### Host requirements:
 
 Your host requires the `gksu` package, to graphically authenticate you in order to run the Docker container.
