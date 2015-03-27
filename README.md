@@ -18,7 +18,6 @@ On Ubuntu, this package is installed by:
 
 Make sure you are a normal, non-privileged user with sudo access.  Then run the following commands.
 
-    sudo docker pull transistor1/chrome
     sudo docker run transistor1/chrome config > start.sh
     sudo chmod +x start.sh
     ./start.sh
