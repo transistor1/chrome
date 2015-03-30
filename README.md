@@ -2,7 +2,7 @@
 
 This is a dockerized version of Google Chrome, with sound and WebGL.
 
-Note: Only tested on a Ubuntu Trusty host, with docker version 1.4.1.  On a different host OS, it is possible that you might have issues with shared devices in /dev, or with the required packages.
+Note: Tested on a Ubuntu Trusty host, with docker version 1.4.1 and also a VirtualBox host with Debian installed.  On a different host OS, it is possible that you might have issues with shared devices in /dev, or with the required packages.
 
 Comments and contributions are welcome!
 
@@ -40,4 +40,8 @@ Most of the dockerized Chromes I've found use some sort of ssh X forwarding and/
 
 Newer versions of Docker support pass-through device nodes with the `--device` option, which is how we pass sound from the container to the host.  X is shared through UNIX sockets by sharing the /tmp/.X11-unix directory as a volume.  This may not be the most secure thing in the world, but it should certainly be more secure than running google-chrome directly in Ubuntu.
 
-    
+### Troubleshooting
+
+You can try to force WebGL rendering on unsupported machines by opening `chrome://flags/` in your instance of Chrome, and clicking "Enable" under the section "Override Software Rendering List".  Be warned, however, that this may result in very poor WebGL performance.  You may want to first ensure that WebGL works properly on your host in Iceweasel or Firefox first.
+
+
