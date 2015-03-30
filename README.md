@@ -44,4 +44,9 @@ Newer versions of Docker support pass-through device nodes with the `--device` o
 
 You can try to force WebGL rendering on unsupported machines by opening `chrome://flags/` in your instance of Chrome, and clicking "Enable" under the section "Override Software Rendering List".  Be warned, however, that this may result in very poor WebGL performance.  You may want to first ensure that WebGL works properly on your host in Iceweasel or Firefox first.
 
+When Chrome launches, it adds an icon in your Taskbar.  If you want to exit Chrome, make sure you right-click this and select "Exit".  Otherwise, your Docker container will continue running.
+
+![exit-chrome](https://cloud.githubusercontent.com/assets/5625360/6897071/7f641c80-d6e0-11e4-95c5-23133089b893.png)
+
+
 
