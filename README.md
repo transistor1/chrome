@@ -13,6 +13,12 @@ Your host requires the `gksu` package, to graphically authenticate you in order 
 On Ubuntu, this package is installed by:
 
     sudo apt-get update && sudo apt-get install gksu
+    
+Make sure you also have the latest Docker:
+
+    wget -qO- https://get.docker.com/ | sh
+    
+For WebGL, make sure you have [supported hardware](https://support.google.com/chrome/answer/1220892?hl=en).
 
 ### Usage:
 
