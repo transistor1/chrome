@@ -2,9 +2,9 @@
 
 This is a dockerized version of Google Chrome, with sound and WebGL.
 
-Note: Tested on a Ubuntu Trusty host, with docker version 1.4.1 and also a VirtualBox host with Debian installed.  On a different host OS, it is possible that you might have issues with shared devices in /dev, or with the required packages.
+**Note**: Thist was tested on a Ubuntu Trusty host, with docker version 1.4.1 and also a VirtualBox host with Debian installed.  On the Debian host, WebGL only worked when forcing it (see Troubleshooting section).  On a different host OS, it is possible that you might have issues with shared devices in /dev, or with the required packages.
 
-Comments and contributions are welcome!
+Comments and contributions are welcome!  Please comment if you have tested on a different host OS.
 
 ### Host requirements:
 
