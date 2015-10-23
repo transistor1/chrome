@@ -46,8 +46,6 @@ $SUDO \
 	-v $CHROMEHOME:/home/$USER \
 	-v $HOME/.config/pulse:/home/$USER/.config/pulse \
 	$SNDFLAGS \
-	--lxc-conf='lxc.cgroup.devices.allow = c 116:* rwm' \
-	--lxc-conf='lxc.cgroup.devices.allow = c 226:* rwm' \
 	-e DISPLAY=unix$DISPLAY \
 	-e HOME=/home/$USER \
 	-e CHROMIUMUSER_USERNAME=$USER \
