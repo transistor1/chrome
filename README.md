@@ -20,7 +20,7 @@ Make sure you also have the latest Docker:
 
     wget -qO- https://get.docker.com/ | sh
     
-For WebGL, make sure you have [supported hardware](https://support.google.com/chrome/answer/1220892?hl=en).
+For WebGL, make sure you have [supported hardware](http://caniuse.com/#feat=webgl).
 
 ### Usage:
 
