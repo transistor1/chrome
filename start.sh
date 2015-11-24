@@ -35,13 +35,24 @@ SNDDEVS+=" $(find /dev/dri -type c)"
 
 SNDFLAGS=$(j=""; for i in $SNDDEVS; do j+="--device=\"$i:$i\" "; done; echo $j)
 
+# Get user's timezone info, if supported by host
+TZFILES=""
+if [ -e /etc/timezone ]; then
+	TZFILES+="-v /etc/timezone:/etc/timezone "
+fi
+
+if [ -e /etc/localtime ]; then
+	TZFILES+="-v /etc/localtime:/etc/localtime "
+fi
+
 #	Note
 #	--lxc-conf='lxc.cgroup.devices.allow = c 116:* rwm' \ #/dev/snd devices
 #	--lxc-conf='lxc.cgroup.devices.allow = c 226:* rwm' \ #/dev/dri devices
 #	grants LXC access to /dev/snd and /dev/dri
 
+
 $SUDO \
-	docker run $FLAGS -i --rm \
+	docker run $FLAGS -i --rm $TZFILES \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v $CHROMEHOME:/home/$USER \
 	-v $HOME/.config/pulse:/home/$USER/.config/pulse \
