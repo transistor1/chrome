@@ -13,11 +13,10 @@ ENV CHROMIUMUSER_UID -
 ENV CHROMIUMUSER_GID -
 
 # Install Chromium.
-RUN \
+RUN apt-get update && \
   apt-get install -y wget && \
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
   echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list && \
-  apt-get update && \
   apt-get install -y --force-yes google-chrome-stable pulseaudio alsa-base alsa-tools alsa-utils sudo && \
   rm -rf /var/lib/apt/lists/*
 
