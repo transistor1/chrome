@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM ubuntu:latest
+FROM ubuntu:wily
 
 #These are placeholders for env vars
 ENV CHROMIUMUSER_USERNAME chromiumuser
