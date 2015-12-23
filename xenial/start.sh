@@ -62,7 +62,7 @@ $SUDO \
 	-e CHROMIUMUSER_USERNAME=$USER \
 	-e CHROMIUMUSER_UID=$USER_UID \
 	-e CHROMIUMUSER_GID=$USER_GID \
-	transistor1/chrome $@
+	transistor1/chrome:xenial
 
 
 
